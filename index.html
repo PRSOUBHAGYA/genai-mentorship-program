@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Mentorship Program | Master the Future of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <div id="canvas-container">
+        <canvas id="dots-canvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">GenAI Mentorship Program</a>
+                </div>
+                <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                    <a href="#about" class="hover:text-blue-600 transition">About</a>
+                    <a href="#curriculum" class="hover:text-blue-600 transition">Curriculum</a>
+                    <a href="#enroll" class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700 mb-6">
+                <span class="relative flex h-2 w-2 mr-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+                </span>
+                Live Cohort • 2 Month Intensive
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6">
+                Master Generative AI <br>
+                <span class="text-blue-600">From Zero to Expert</span>
+            </h1>
+            
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                A comprehensive mentorship program designed for learners of all backgrounds. We take you from zero AI knowledge to building advanced Agentic AI workflows and RAG systems.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#enroll" class="px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-lg">
+                    Start Your Journey
+                </a>
+                <a href="#curriculum" class="px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl border border-slate-200 hover:bg-slate-50 transition text-lg">
+                    View Curriculum
+                </a>
+            </div>
+        </div>
+        <!-- Decorative background element -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-200 rounded-full blur-3xl opacity-30"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Why This Program?</h2>
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+                                <i class="fa-solid fa-bolt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Fast-Paced Learning</h3>
+                                <p class="text-slate-600">2 months of intensive, live guided learning with real-world projects.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center text-indigo-600">
+                                <i class="fa-solid fa-code text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Hands-on Experience</h3>
+                                <p class="text-slate-600">Build an HR Policy Assistant and an ATS-friendly Resume Builder.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600">
+                                <i class="fa-solid fa-brain text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Cutting Edge Tech</h3>
+                                <p class="text-slate-600">Learn LangGraph, RAG, and the latest in Agentic AI workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-100 rounded-3xl p-8 border border-slate-200 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <p class="text-lg italic text-slate-700 mb-4">"Generative AI is for everyone. Regardless of your current role or technical expertise, this program bridges the gap between where you are and the future of AI with a structured, project-first approach."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                            <div>
+                                <p class="font-semibold">Goal of this program</p>
+                                <p class="text-sm text-slate-500">GenAI Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-100 rounded-full blur-2xl opacity-50"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Course Curriculum</h2>
+                <p class="text-slate-600">A structured journey from basics to advanced agentic systems.</p>
+            </div>
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-full text-lg font-bold border-2 border-indigo-400 shadow-lg shadow-indigo-200">
+                    <i class="fa-regular fa-calendar-days mr-3 text-xl"></i> Cohort Starts on 2<sup>nd</sup> May 2026
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Module 0: Induction -->
+                <div class="relative pl-8 border-l-2 border-blue-200 group">
+                    <div class="absolute left-[-9px] top-0 w-4 h-4 bg-blue-600 rounded-full ring-4 ring-blue-100 group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm group-hover:border-blue-300 transition">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Module 0: Program Induction</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Program Overview & Goals</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Building Professional Networks</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Personal Branding on LinkedIn</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Learning via YouTube & Community</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 1 -->
+                <div class="relative pl-8 border-l-2 border-blue-200 group">
+                    <div class="absolute left-[-9px] top-0 w-4 h-4 bg-blue-600 rounded-full ring-4 ring-blue-100 group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm group-hover:border-blue-300 transition">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Module 1: Intro to GenAI</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> GenAI vs ML Concepts</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> History of LLMs</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> How LLMs Work</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Prompt Engineering Fundamentals</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-sm font-medium text-blue-600">
+                            Assessment 1: Quiz
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="relative pl-8 border-l-2 border-blue-200 group">
+                    <div class="absolute left-[-9px] top-0 w-4 h-4 bg-blue-600 rounded-full ring-4 ring-blue-100 group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm group-hover:border-blue-300 transition">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Module 2: Python for GenAI</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Ollama Setup & Integration</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Data Types & Prompt Operators</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Logic & Loops for Prompt Optimization</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Master Prompt Classes (OOP)</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-sm font-medium text-blue-600">
+                            Assessment 2: Mini Project
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="relative pl-8 border-l-2 border-blue-200 group">
+                    <div class="absolute left-[-9px] top-0 w-4 h-4 bg-blue-600 rounded-full ring-4 ring-blue-100 group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm group-hover:border-blue-300 transition">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Module 3: Advanced GenAI Concepts</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Langchain Crash Course</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> RAG: What, Why, and How?</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Intro to Langgraph & Tool Use</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-500 text-xs"></i> Agents and Complex Workflows</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-sm font-medium text-blue-600">
+                            Assessment 3: Mini Project
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="relative pl-8 border-l-2 border-blue-200 group">
+                    <div class="absolute left-[-9px] top-0 w-4 h-4 bg-blue-600 rounded-full ring-4 ring-blue-100 group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm group-hover:border-blue-300 transition">
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Module 4: Capstone Projects & Vibe Coding</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-600">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-rocket text-blue-500 text-xs"></i> HR Policy & Onboarding Assistant (RAG)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-rocket text-blue-500 text-xs"></i> ATS-Friendly Resume Builder (Agentic)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-rocket text-blue-500 text-xs"></i> Vibe Coding: Portfolio via Claude Code</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-rocket text-blue-500 text-xs"></i> Reverse Engineering from Docs/GitHub</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-sm font-medium text-blue-600">
+                            Assessment 4: Build on your own Data
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Section -->
+    <section id="enroll" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Enroll Now</h2>
+                <p class="text-slate-600">Join the next live cohort. Limited seats available.</p>
+            </div>
+
+            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-xl">
+                <!-- Using Formspree for static site data capture -->
+                <form id="enrollment-form" action="https://formspree.io/f/xyklpdzw" method="POST" class="grid grid-cols-1 gap-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex flex-col">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
+                            <input type="text" name="name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition outline-none">
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                            <input type="email" name="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex flex-col">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
+                            <input type="tel" name="phone" required placeholder="+91 00000 00000" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition outline-none">
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Status</label>
+                            <select id="status-select" name="status" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition outline-none appearance-none">
+                                <option value="" disabled selected>Select your status</option>
+                                <option value="student">Student</option>
+                                <option value="professional">Professional</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="dynamic-fields" class="space-y-6">
+                        <!-- Occupation field will be injected here if Professional is selected -->
+                    </div>
+
+                    <input type="hidden" name="_next" value="https://rzp.io/rzp/qXpPQjOx">
+
+                    <button type="submit" class="w-full px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-lg transform active:scale-95">
+                        Enroll Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-900 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <a href="index.html" class="text-xl font-bold text-white">GenAI Mentorship Program</a>
+                <p class="text-sm mt-2">&copy; 2026 All rights reserved.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="https://www.linkedin.com/in/prsoubhagya/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition text-2xl"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@cslogbysoubhagya" target="_blank" rel="noopener noreferrer" class="hover:text-white transition text-2xl"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://github.com/PRSOUBHAGYA" target="_blank" rel="noopener noreferrer" class="hover:text-white transition text-2xl"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
