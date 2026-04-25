@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <label class="block text-sm font-semibold text-slate-700 mb-2">Current Occupation</label>
                     <input type="text" name="occupation" required placeholder="e.g. Marketing Manager, Software Engineer"
                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition outline-none">
+                    <span class="text-red-500 text-xs mt-1 hidden error-message"></span>
                 `;
                 dynamicFieldsContainer.appendChild(div);
             }
@@ -127,49 +128,56 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('input, select').forEach(el => el.classList.remove('border-red-500'));
+
             // --- Form Validation ---
             const formData = new FormData(form);
             const data = {};
             let isValid = true;
-            let errorMessage = '';
 
             formData.forEach((value, key) => {
                 data[key] = value;
             });
 
-            // Name Validation: Non-empty and at least 2 characters
+            const setError = (name, message) => {
+                isValid = false;
+                const input = form.querySelector(`[name="${name}"]`);
+                if (input) {
+                    input.classList.add('border-red-500');
+                    const errorSpan = input.parentNode.querySelector('.error-message');
+                    if (errorSpan) {
+                        errorSpan.textContent = message;
+                        errorSpan.classList.remove('hidden');
+                    }
+                }
+            };
+
+            // Name Validation
             if (!data.name || data.name.trim().length < 2) {
-                isValid = false;
-                errorMessage = 'Please enter a valid full name.';
+                setError('name', 'Please enter a valid full name.');
             }
-            // Email Validation: Basic email regex
-            else if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-                isValid = false;
-                errorMessage = 'Please enter a valid email address.';
+            // Email Validation
+            if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+                setError('email', 'Please enter a valid email address.');
             }
-            // Phone Validation: Basic phone regex (minimum 10 digits)
-            else if (!data.phone || !/^\+?[\d\s-]{10,}$/.test(data.phone)) {
-                isValid = false;
-                errorMessage = 'Please enter a valid phone number (min 10 digits).';
+            // Phone Validation
+            if (!data.phone || !/^\d{10,}$/.test(data.phone.replace(/\s+/g, ''))) {
+                setError('phone', 'Please enter a valid phone number (digits only, min 10).');
             }
             // Status Validation
-            else if (!data.status) {
-                isValid = false;
-                errorMessage = 'Please select your professional status.';
+            if (!data.status) {
+                setError('status', 'Please select your professional status.');
             }
-            // Occupation Validation (only if professional is selected)
-            else if (data.status === 'professional' && (!data.occupation || data.occupation.trim().length < 2)) {
-                isValid = false;
-                errorMessage = 'Please enter your current occupation.';
+            // Occupation Validation
+            if (data.status === 'professional' && (!data.occupation || data.occupation.trim().length < 2)) {
+                setError('occupation', 'Please enter your current occupation.');
             }
 
-            if (!isValid) {
-                alert(errorMessage);
-                return;
-            }
+            if (!isValid) return;
 
             const btn = form.querySelector('button');
-            // Save enrollment data to localStorage
             localStorage.setItem('pending_enrollment', JSON.stringify(data));
 
             if (btn) {
@@ -178,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.add('opacity-70', 'cursor-not-allowed');
             }
 
-            // Redirect directly to payment page without submitting to Formspree yet
             window.location.href = 'https://rzp.io/rzp/qXpPQjOx';
         });
     }
