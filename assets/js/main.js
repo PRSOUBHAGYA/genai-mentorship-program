@@ -126,15 +126,49 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const btn = form.querySelector('button');
-            const formData = new FormData(form);
 
-            // Convert FormData to a plain object for localStorage
+            // --- Form Validation ---
+            const formData = new FormData(form);
             const data = {};
+            let isValid = true;
+            let errorMessage = '';
+
             formData.forEach((value, key) => {
                 data[key] = value;
             });
 
+            // Name Validation: Non-empty and at least 2 characters
+            if (!data.name || data.name.trim().length < 2) {
+                isValid = false;
+                errorMessage = 'Please enter a valid full name.';
+            }
+            // Email Validation: Basic email regex
+            else if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+                isValid = false;
+                errorMessage = 'Please enter a valid email address.';
+            }
+            // Phone Validation: Basic phone regex (minimum 10 digits)
+            else if (!data.phone || !/^\+?[\d\s-]{10,}$/.test(data.phone)) {
+                isValid = false;
+                errorMessage = 'Please enter a valid phone number (min 10 digits).';
+            }
+            // Status Validation
+            else if (!data.status) {
+                isValid = false;
+                errorMessage = 'Please select your professional status.';
+            }
+            // Occupation Validation (only if professional is selected)
+            else if (data.status === 'professional' && (!data.occupation || data.occupation.trim().length < 2)) {
+                isValid = false;
+                errorMessage = 'Please enter your current occupation.';
+            }
+
+            if (!isValid) {
+                alert(errorMessage);
+                return;
+            }
+
+            const btn = form.querySelector('button');
             // Save enrollment data to localStorage
             localStorage.setItem('pending_enrollment', JSON.stringify(data));
 
